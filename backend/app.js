@@ -39,6 +39,15 @@ import multer from 'multer'
 //     console.log(req.file);
 // })
 
+app.use(cookieParser())
+app.use(express.json());
+app.use(express.urlencoded({extended:true}))
+app.use(fileUpload({
+    useTempFiles:true,
+    tempFileDir:'/tmp/',
+
+})
+);
 
 app.use(cors())
 app.use(function(req, res, next) {
@@ -49,15 +58,6 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(cookieParser())
-app.use(express.json());
-app.use(express.urlencoded({extended:true}))
-app.use(fileUpload({
-    useTempFiles:true,
-    tempFileDir:'/tmp/',
-
-})
-);
 
 app.use('/api/v1/user',userRouter)
 app.use('/api/v1/application',applicationRouter)
