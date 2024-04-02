@@ -20,7 +20,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(
+      const res = await axios.post(
         "https://mern-job-seeking-hqac.vercel.app/api/v1/user/login",
         { email, role, password },
         {
@@ -30,7 +30,8 @@ const Login = () => {
           withCredentials: true,
         }
       );
-      toast.success(data.message);
+      console.log(res);
+      // toast.success(data.message);
       setEmail("");
       setPassword("");
       setRole("");
