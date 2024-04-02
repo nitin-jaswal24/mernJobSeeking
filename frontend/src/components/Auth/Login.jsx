@@ -21,7 +21,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "/api/v1/user/login",
+        "https://mern-job-seeking-hqac.vercel.app/api/v1/user/login",
         { email, role, password },
        
       );
