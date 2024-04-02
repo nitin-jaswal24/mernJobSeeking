@@ -23,12 +23,7 @@ const Login = () => {
       const res = await axios.post(
         "/api/v1/user/login",
         { email, role, password },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
+       
       );
       console.log(res);
       // toast.success(data.message);
