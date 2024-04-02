@@ -1,4 +1,4 @@
-# Echo Hub Setup Guide
+# carrerNest Setup Guide
 
 ## Overview
 carrerNest is the Job seeking website in which the job seekers can seek for the job and employer can post the jobs 
