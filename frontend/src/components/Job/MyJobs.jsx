@@ -17,7 +17,7 @@ const MyJobs = () => {
     const fetchJobs = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/job/getmyJobs",
+          "https://mern-job-seeking-hqac.vercel.app/v1/job/getmyJobs",
           { withCredentials: true }
         );
         setMyJobs(data.myJobs);
@@ -47,7 +47,7 @@ const MyJobs = () => {
   const handleUpdateJob = async (jobId) => {
     const updatedJob = myJobs.find((job) => job._id === jobId);
     await axios
-      .put(`http://localhost:4000/api/v1/job/updateJob/${jobId}`, updatedJob, {
+      .put(`https://mern-job-seeking-hqac.vercel.app/api/v1/job/updateJob/${jobId}`, updatedJob, {
         withCredentials: true,
       })
       .then((res) => {
@@ -68,7 +68,7 @@ const MyJobs = () => {
   
     try {
       const response = await axios.delete(
-        `http://localhost:4000/api/v1/job/deleteJob/${jobId}`,
+        `https://mern-job-seeking-hqac.vercel.app/api/v1/job/deleteJob/${jobId}`,
         { withCredentials: true }
       );
   
